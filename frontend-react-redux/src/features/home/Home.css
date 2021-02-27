@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   height: 50vh;
   width: 75vw;
@@ -10,11 +10,56 @@
   position: absolute;
   top: 50%;
   left: 50%;
+  font-size: 1rem;
   transform: translate(-50%, -50%);
 }
 
-.login {
+.form-container {
+  display: flex;
+  flex-direction: column;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
 }
 
-.signup {
+.login {
+  background: #72b872;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.login span,
+.login input {
+  margin-bottom: 0.5em;
+  text-align: center;
+  margin: 0.2em 1em;
+}
+
+/* .signup {
+  margin-right: 1em;
+  margin-left: 0.5em;
+} */
+
+/* .signup span {
+  margin-bottom: 0.5em;
+} */
+
+.container button {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  width: 50%;
+  height: 35px;
+}
+
+.container.overlay-container {
+  display: flex;
+  flex-direction: column;
+
+  width: 50%;
+  margin-left: 1em;
+  margin-right: 0.5em;
 }
