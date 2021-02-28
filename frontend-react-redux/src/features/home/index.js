@@ -19,7 +19,7 @@ function Home() {
         <span>Forgot your password?</span>
         <button type="submit">SIGN IN</button>
       </form>
-      <div className="overlay-conatainer">
+      <div className="overlay-container">
         <h1>Hello, Friend</h1>
         <span>
           Enter in your personal details and create an account to begin
