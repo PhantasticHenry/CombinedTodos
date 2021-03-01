@@ -1,0 +1,13 @@
+.reactIconsContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.reactIcons {
+  margin: 0.2em;
+}
+
+.reactIcons:hover {
+  transform: scale(1.5);
+  color: rgb(46, 255, 64);
+}
