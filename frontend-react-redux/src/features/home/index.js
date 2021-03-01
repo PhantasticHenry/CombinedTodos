@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Home.css";
+import SignInThrough from "../../components/SignInThrough";
 
 function Home() {
+  const [click, setClick] = useState(false);
   return (
     <div className="container">
-      <form action="#" className="form-container login">
+      <form
+        action="#"
+        className={
+          !click ? "form-container signin" : "form-container signin slide-right"
+        }
+      >
         <h1>Sign in</h1>
-        sign in through facebook, gmail, github
+        <SignInThrough />
         <span>or use your account</span>
         <input type="email" name="email" placeholder="Email" />
         <input type="password" name="password" placeholder="Password" />
@@ -19,21 +26,29 @@ function Home() {
         <span>Forgot your password?</span>
         <button type="submit">SIGN IN</button>
       </form>
-      <div className="overlay-container">
-        <h1>Hello, Friend</h1>
-        <span>
-          Enter in your personal details and create an account to begin
-        </span>
-        <button>SIGN UP</button>
-      </div>
-      {/* <form action="#" className="form-container signup">
+      {/* <form action="#" className={!click ? "hide" : "form-container signup"}> */}
+      <form
+        action="#"
+        className={
+          click ? "form-container signup active" : "form-container signup"
+        }
+      >
         <h1>Create Account</h1>
         sign in through facebook, gmail, github
         <span>or use your email for registration</span>
         <input type="text" name="name" placeholder="Name" />
         <input type="email" name="email" placeholder="Email" />
         <input type="password" name="password" placeholder="Password" />
-      </form> */}
+      </form>
+      <div className="overlay-container">
+        <div className="overlay-right">
+          <h1>Hello, Friend</h1>
+          <span>
+            Enter in your personal details and create an account to begin
+          </span>
+          <button onClick={() => setClick(!click)}>SIGN UP</button>
+        </div>
+      </div>
     </div>
   );
 }
