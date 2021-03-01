@@ -2,16 +2,18 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  height: 35vh;
+  height: 75vh;
   width: 75vw;
   border: 5px;
   border-radius: 1rem;
-  box-shadow: 2px 2px 7px 1px #307c04;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   position: absolute;
   top: 50%;
   left: 50%;
   font-size: 1rem;
+  overflow: hidden;
   transform: translate(-50%, -50%);
+  z-index: 0;
 }
 
 .form-container {
@@ -21,44 +23,106 @@
   border-bottom-left-radius: 1rem;
 }
 
-.login {
-  background: #72b872;
+.signin {
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
+  transition: all 2s ease-in-out;
 }
 
-.login span,
-.login input {
+.signup {
+  position: absolute;
+  transform: translate(40%, 0%);
+  visibility: hidden;
+}
+
+.signin span,
+.signin input,
+.signup span,
+.signup input {
   margin-bottom: 0.5em;
   text-align: center;
   margin: 0.2em 1em;
 }
 
-/* .signup {
-  margin-right: 1em;
-  margin-left: 0.5em;
-} */
+.signin button {
+  background: #72b872;
+}
 
-/* .signup span {
-  margin-bottom: 0.5em;
-} */
+.signup.active {
+  animation: fadeIn 2s;
+  visibility: visible;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.signin.slide-right {
+  position: relative;
+  background: #72b872;
+  animation: slideRight 2s;
+  /* animation-direction: normal; */
+  transition: all 2s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideRight {
+  0% {
+    left: 0px;
+    top: 0px;
+  }
+  50% {
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+  }
+  100% {
+    left: 50%;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    opacity: 0;
+  }
+}
 
 .container button {
   display: flex;
   justify-content: center;
   align-self: center;
   align-items: center;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   width: 50%;
   height: 35px;
 }
 
 .overlay-container {
+  background: #72b872;
   display: flex;
   flex-direction: column;
+  height: 100%;
   width: 100%;
-  margin-left: 1em;
-  margin-right: 0.5em;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.hide {
+  display: none;
 }
